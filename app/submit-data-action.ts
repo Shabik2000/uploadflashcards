@@ -62,10 +62,10 @@ export async function submitUserData(formData: FormData, request?: Request) {
   // Process the pasted data
   const rows = processExcelData(rawData)
 
-  // Validate that we have at least 25 rows
-  if (rows.length < 25) {
+  // Validate that we have at least 20 rows
+  if (rows.length < 20) {
     return {
-      error: "Minimum 25 questions and answers required",
+      error: "Minimum 20 questions and answers required",
       success: false,
       rowCount: rows.length,
     }

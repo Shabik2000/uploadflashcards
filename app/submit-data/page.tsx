@@ -106,9 +106,15 @@ export default function SubmitDataPage() {
     // Validate title and description before submission
     const titleValue = formData.get("topic") as string
     const descriptionValue = formData.get("description") as string
+    const emailValue = formData.get("email") as string
 
     const isTitleValid = validateTitle(titleValue)
     const isDescriptionValid = validateDescription(descriptionValue)
+
+    if (!emailValue || !emailValue.includes("@")) {
+      setError("Please enter a valid email address")
+      return
+    }
 
     if (!isTitleValid || !isDescriptionValid) {
       return // Prevent submission if fields are invalid
@@ -148,7 +154,7 @@ export default function SubmitDataPage() {
             following format: Question - Short Answer - Read more.
             <br />
             <br />
-            Please prepare a table in excel in that same order and prepare MINIMUM 25 questions and answers where the
+            Please prepare a table in excel in that same order and prepare MINIMUM 20 questions and answers where the
             "Read more" part is optional.
           </CardDescription>
         </CardHeader>
@@ -167,23 +173,12 @@ export default function SubmitDataPage() {
 
           <form ref={formRef} action={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="username">
-                What is your username on MemoryNest? We will use it to pair it to your account
-              </Label>
-              <Input id="username" name="username" placeholder="Your username" required />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="location">Your Location (Country/Region)</Label>
-              <Input
-                id="location"
-                name="location"
-                placeholder="e.g., United States, Germany, etc."
-                value={location}
-                onChange={handleLocationChange}
-              />
+              <Label htmlFor="email">Email Address</Label>
+              <Input id="email" name="email" type="email" placeholder="Your email address" required />
               <p className="text-xs text-muted-foreground">
-                Optional: Helps us understand where our content is coming from.
+                As we may need to communicate with our users about an uploaded set of questions, it is currently
+                mandatory to give an email. We will also send you a message when/if the set gets uploaded into the
+                official database.
               </p>
             </div>
 
@@ -229,7 +224,7 @@ export default function SubmitDataPage() {
               <p className="text-sm text-muted-foreground">
                 Format should be: Question &nbsp;&nbsp;&nbsp; Short Answer &nbsp;&nbsp;&nbsp; Read more (optional)
                 <br />
-                Minimum 25 rows required.
+                Minimum 20 rows required.
               </p>
               <Textarea
                 id="data"
@@ -238,6 +233,28 @@ export default function SubmitDataPage() {
                 className="min-h-[300px] font-mono"
                 required
               />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="location">Your Location (Country/Region)</Label>
+              <Input
+                id="location"
+                name="location"
+                placeholder="e.g., United States, Germany, etc."
+                value={location}
+                onChange={handleLocationChange}
+              />
+              <p className="text-xs text-muted-foreground">
+                Optional: Helps us understand where our content is coming from.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="username">Your username on MemoryNest (optional)</Label>
+              <Input id="username" name="username" placeholder="Your username (optional)" />
+              <p className="text-xs text-muted-foreground">
+                Optional: We can pair this submission to your account if you provide your username.
+              </p>
             </div>
 
             <Button
