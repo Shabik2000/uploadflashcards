@@ -173,11 +173,11 @@ export default function SubmitDataToSheetsPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-50 to-green-100 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4">
       <Card className="mx-auto w-full max-w-3xl shadow-md">
         <CardHeader>
-          <CardTitle className="text-center text-2xl">Submit Your Own Data (Google Sheets)</CardTitle>
-          <CardDescription className="text-center">
+          <CardTitle className="text-center text-2xl text-blue-800">Submit Your Own Data (Google Sheets)</CardTitle>
+          <CardDescription className="text-center text-blue-600">
             We believe in the principle that the knowledge of the masses is powerful and that we can help each other
             study by sharing information and adding to it. As you may know, we mainly organise the information in the
             following format: Question - Short Answer - Read more.
@@ -188,7 +188,7 @@ export default function SubmitDataToSheetsPage() {
           </CardDescription>
           <div className="flex justify-center mb-4">
             <Link href="/test-sheets-connection">
-              <Button variant="outline" className="bg-green-100 border-green-300 text-green-800 hover:bg-green-200">
+              <Button variant="outline" className="bg-blue-100 border-blue-300 text-blue-800 hover:bg-blue-200">
                 Test Google Sheets Connection
               </Button>
             </Link>
@@ -268,7 +268,7 @@ export default function SubmitDataToSheetsPage() {
                   variant="outline"
                   size="sm"
                   onClick={togglePreview}
-                  className="flex items-center gap-1"
+                  className="flex items-center gap-1 bg-transparent"
                 >
                   {showPreview ? (
                     <>
@@ -323,7 +323,7 @@ export default function SubmitDataToSheetsPage() {
             {/* Data Preview Section */}
             {showPreview && parsedData.length > 0 && (
               <div className="border rounded-md p-4 space-y-2">
-                <h3 className="font-medium text-sm">Data Preview ({parsedData.length} rows)</h3>
+                <h3 className="font-medium text-sm text-blue-600">Data Preview ({parsedData.length} rows)</h3>
                 <div className="max-h-[300px] overflow-auto">
                   <Table>
                     <TableHeader>
@@ -353,7 +353,7 @@ export default function SubmitDataToSheetsPage() {
 
             <Button
               type="submit"
-              className="w-full bg-green-600 hover:bg-green-700"
+              className="w-full bg-blue-600 hover:bg-blue-700"
               disabled={
                 isSubmitting ||
                 !!titleError ||

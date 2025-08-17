@@ -9,6 +9,7 @@ import { adminLogin } from "@/utils/admin-auth"
 import { useRouter } from "next/navigation"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle } from "lucide-react"
+import { Logo } from "@/components/logo"
 
 export default function AdminLoginPage() {
   const [error, setError] = useState<string | null>(null)
@@ -36,9 +37,12 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-50 to-green-100 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4">
       <Card className="mx-auto w-full max-w-md shadow-md">
         <CardHeader>
+          <div className="flex items-center justify-center mb-4">
+            <Logo className="h-12 w-12" showText={false} />
+          </div>
           <CardTitle className="text-center text-2xl">Admin Login</CardTitle>
           <CardDescription className="text-center">
             Enter your admin password to access the admin dashboard
@@ -56,10 +60,9 @@ export default function AdminLoginPage() {
             <div className="space-y-2">
               <Label htmlFor="password">Admin Password</Label>
               <Input id="password" name="password" type="password" required />
-              {/* Removed password hint */}
             </div>
 
-            <Button type="submit" className="w-full bg-green-600 hover:bg-green-700" disabled={isLoading}>
+            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={isLoading}>
               {isLoading ? "Logging in..." : "Login"}
             </Button>
           </form>

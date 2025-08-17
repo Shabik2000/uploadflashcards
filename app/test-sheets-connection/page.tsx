@@ -28,11 +28,11 @@ export default function TestSheetsConnectionPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-50 to-green-100 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4">
       <Card className="mx-auto w-full max-w-md shadow-md">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-green-600 hover:text-green-700 flex items-center">
+            <Link href="/" className="text-blue-600 hover:text-blue-700 flex items-center">
               <ArrowLeft className="h-4 w-4 mr-1" /> Back to Home
             </Link>
           </div>
@@ -51,7 +51,7 @@ export default function TestSheetsConnectionPage() {
             </AlertDescription>
           </Alert>
 
-          <Button onClick={runTest} disabled={loading} className="w-full bg-green-600 hover:bg-green-700">
+          <Button onClick={runTest} disabled={loading} className="w-full bg-blue-600 hover:bg-blue-700">
             {loading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Testing Connection...
@@ -66,7 +66,7 @@ export default function TestSheetsConnectionPage() {
               <div className="flex items-center gap-2 mb-2">
                 <span className="font-medium">Status:</span>
                 {result.success ? (
-                  <span className="text-green-600 flex items-center gap-1">
+                  <span className="text-blue-600 flex items-center gap-1">
                     <CheckCircle className="h-4 w-4" /> Connected
                   </span>
                 ) : (
@@ -84,7 +84,7 @@ export default function TestSheetsConnectionPage() {
                   <p>
                     <span className="font-medium">Number of Sheets:</span> {result.sheetsCount}
                   </p>
-                  <div className="bg-green-50 border border-green-200 rounded-md p-3 mt-2 text-green-800">
+                  <div className="bg-blue-50 border border-blue-200 rounded-md p-3 mt-2 text-blue-800">
                     {result.message}
                   </div>
                 </div>

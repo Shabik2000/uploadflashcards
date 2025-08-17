@@ -26,7 +26,7 @@ export default function TestSheetsConnectionPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-50 to-green-100 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4">
       <Card className="mx-auto w-full max-w-md shadow-md">
         <CardHeader>
           <CardTitle className="text-center text-xl">Google Sheets Connection Test</CardTitle>
@@ -35,7 +35,7 @@ export default function TestSheetsConnectionPage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Button onClick={runTest} disabled={loading} className="w-full bg-green-600 hover:bg-green-700">
+          <Button onClick={runTest} disabled={loading} className="w-full bg-blue-600 hover:bg-blue-700">
             {loading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Testing Connection...

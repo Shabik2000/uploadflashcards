@@ -13,6 +13,7 @@ import Link from "next/link"
 import { useSearchParams, useRouter } from "next/navigation"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle } from "lucide-react"
+import { Logo } from "@/components/logo"
 
 export default function SubmitDataPage() {
   const formRef = useRef<HTMLFormElement>(null)
@@ -144,9 +145,12 @@ export default function SubmitDataPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-50 to-green-100 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4">
       <Card className="mx-auto w-full max-w-3xl shadow-md">
         <CardHeader>
+          <div className="flex items-center justify-center mb-4">
+            <Logo className="h-12 w-12" showText={false} />
+          </div>
           <CardTitle className="text-center text-2xl">Upload Your Own Flashcards</CardTitle>
           <CardDescription className="text-center">
             We believe in the principle that the knowledge of the masses is powerful and that we can help each other
@@ -250,7 +254,7 @@ export default function SubmitDataPage() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="username">Your username on MemoryNest (optional)</Label>
+              <Label htmlFor="username">Your username on Memory Nest (optional)</Label>
               <Input id="username" name="username" placeholder="Your username (optional)" />
               <p className="text-xs text-muted-foreground">
                 Optional: We can pair this submission to your account if you provide your username.
@@ -259,7 +263,7 @@ export default function SubmitDataPage() {
 
             <Button
               type="submit"
-              className="w-full bg-green-600 hover:bg-green-700"
+              className="w-full bg-blue-600 hover:bg-blue-700"
               disabled={
                 isSubmitting || !!titleError || title.length < 10 || !!descriptionError || description.length < 25
               }

@@ -103,9 +103,9 @@ export default function RateQuestionsPage() {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-50 to-green-100 p-4">
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4">
         <div className="text-center">
-          <Loader2 className="h-8 w-8 animate-spin mx-auto text-green-600" />
+          <Loader2 className="h-8 w-8 animate-spin mx-auto text-blue-600" />
           <p className="mt-2">Loading questions...</p>
         </div>
       </div>
@@ -114,7 +114,7 @@ export default function RateQuestionsPage() {
 
   if (!currentSet) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-50 to-green-100 p-4">
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4">
         <Card className="mx-auto w-full max-w-3xl shadow-md">
           <CardHeader>
             <CardTitle className="text-center text-2xl">No More Questions</CardTitle>
@@ -123,7 +123,7 @@ export default function RateQuestionsPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="text-center">
-            <Button onClick={() => setPage(0)} className="bg-green-600 hover:bg-green-700">
+            <Button onClick={() => setPage(0)} className="bg-blue-600 hover:bg-blue-700">
               Start Over
             </Button>
           </CardContent>
@@ -133,7 +133,7 @@ export default function RateQuestionsPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-br from-green-50 to-green-100 p-4">
+    <div className="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 to-blue-100 p-4">
       <div className="container mx-auto max-w-4xl">
         <Card className="shadow-md">
           <CardHeader>
@@ -208,11 +208,7 @@ export default function RateQuestionsPage() {
             <div className="text-sm text-muted-foreground">
               {currentSet.questions.length} questions • {Object.values(ratings).filter((r) => r > 0).length} rated
             </div>
-            <Button
-              onClick={handleSubmit}
-              disabled={!allRated || submitting}
-              className="bg-green-600 hover:bg-green-700"
-            >
+            <Button onClick={handleSubmit} disabled={!allRated || submitting} className="bg-blue-600 hover:bg-blue-700">
               {submitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting

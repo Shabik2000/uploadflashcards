@@ -55,11 +55,11 @@ export default function SubmitLocationPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-50 to-green-100 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4">
       <Card className="mx-auto w-full max-w-md shadow-md">
         <CardHeader>
           <div className="flex items-center justify-center mb-2">
-            <MapPin className="h-8 w-8 text-green-600" />
+            <MapPin className="h-8 w-8 text-blue-600" />
           </div>
           <CardTitle className="text-center text-2xl">Update Your Location</CardTitle>
           <CardDescription className="text-center">
@@ -75,10 +75,10 @@ export default function SubmitLocationPage() {
           )}
 
           {success && (
-            <Alert className="mb-4 bg-green-50 border-green-200">
-              <CheckCircle className="h-4 w-4 text-green-600" />
+            <Alert className="mb-4 bg-blue-50 border-blue-200">
+              <CheckCircle className="h-4 w-4 text-blue-600" />
               <AlertTitle>Success!</AlertTitle>
-              <AlertDescription className="text-green-800">
+              <AlertDescription className="text-blue-800">
                 Your location has been updated successfully. All your submissions will now show this location.
               </AlertDescription>
             </Alert>
@@ -115,7 +115,7 @@ export default function SubmitLocationPage() {
 
             <Button
               type="submit"
-              className="w-full bg-green-600 hover:bg-green-700"
+              className="w-full bg-blue-600 hover:bg-blue-700"
               disabled={isSubmitting || !username.trim() || !location.trim()}
             >
               {isSubmitting ? "Updating..." : "Update Location"}

@@ -10,6 +10,7 @@ import { submitRequestSet } from "../actions"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
 import { useSearchParams } from "next/navigation"
+import { Logo } from "@/components/logo"
 
 export default function RequestSetsPage() {
   const formRef = useRef<HTMLFormElement>(null)
@@ -23,9 +24,12 @@ export default function RequestSetsPage() {
   }, [searchParams.get("t")])
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-50 to-green-100 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 p-4">
       <Card className="mx-auto w-full max-w-md shadow-md">
         <CardHeader>
+          <div className="flex items-center justify-center mb-4">
+            <Logo className="h-12 w-12" showText={false} />
+          </div>
           <CardTitle className="text-center text-2xl">Request Topics</CardTitle>
           <CardDescription className="text-center">
             We want to produce study sets that you want to study. Please make a suggestion on what type of topics that
@@ -36,7 +40,7 @@ export default function RequestSetsPage() {
           <form ref={formRef} action={submitRequestSet} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name">
-                What is your username on MemoryNest? We will use it to pair it to your account
+                What is your username on Memory Nest? We will use it to pair it to your account
               </Label>
               <Input id="name" name="name" placeholder="Your username" required />
             </div>
@@ -80,7 +84,7 @@ export default function RequestSetsPage() {
               </div>
             </div>
 
-            <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">
+            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
               Submit Request
             </Button>
           </form>
